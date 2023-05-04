@@ -8,16 +8,18 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 */
 $name = ($_GET["name"]);
 $email = ($_GET["email"]);
-$age = ($_GET);
+$age = ($_GET["age"]);
 $characters = ['@', '.'];
 
 $validName = (strlen($name) > 3);
-$validEmail = str_contains($email, $characters);
+$validEmail = str_contains($email, '@');
 $validAge = is_numeric($age);
 
-/* if ($name === $validName && $email === $validEmail && $age === $validAge) {
-    echo 'ciao';
-}; */
+if ($validName && $validEmail && $validAge) {
+    echo 'ACCESSO RIUSCITO';
+} else {
+    echo 'ACCESSO NEGATO';
+};
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +41,12 @@ $validAge = is_numeric($age);
                 <input type="text" class="form-control" id="name" name="name" placeholder="Type your name">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Type your email">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Type your email">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Age</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Type your age">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="Type your age">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
