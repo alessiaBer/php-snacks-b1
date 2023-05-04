@@ -26,7 +26,7 @@ $basketMatches = [
     ],
     [
         "homeTeam" => "Toronto Raptors",
-        "guestTeam" => "Dllas Mavericks",
+        "guestTeam" => "Dallas Mavericks",
         "homePoints" => 111,
         "guestPoints" => 127
     ],
